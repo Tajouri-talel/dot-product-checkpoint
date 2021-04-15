@@ -1,0 +1,32 @@
+PROCEDURE dot_product (VAR prod:INTEGER , V1,V2: ARRAY_OF_INTEGER)
+VAR 
+i : INTEGER;
+BEGIN
+prod:=0;
+FOR i FROM 0 TO V1.length -1 STEP 1 DO 
+    prod := prod + V1[i] * V2[i] ;
+END_FOR
+END_PROCEDURE
+
+
+ALGORITHM Dot-Product
+VAR 
+V1, V2: ARRAY_OF_INTEGER (50);
+ps,i : INTEGER;
+n : Integer; // n pairs of V1 and V2
+BEGIN
+READ (n); 
+FOR i FROM 0 TO n-1 STEP 1 DO 
+    READ V1[i];
+    READ V2[i];
+END_FOR
+dot_product (ps, V1,V2);
+IF (ps=0) THEN
+    WRITE (" the two vectors are orthogonal");
+    ELSE
+    WRITE ("the two vectors are not orthogonal");
+END_IF
+END
+
+
+
